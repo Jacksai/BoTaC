@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523125210) do
+ActiveRecord::Schema.define(version: 20140523130957) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20140523125210) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "book_comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.text     "content"
+    t.integer  "grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "book_comments", ["book_id"], name: "index_book_comments_on_book_id"
+  add_index "book_comments", ["user_id"], name: "index_book_comments_on_user_id"
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -39,6 +51,16 @@ ActiveRecord::Schema.define(version: 20140523125210) do
 
   create_table "tags", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "login"
+    t.string   "password"
+    t.string   "mail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
