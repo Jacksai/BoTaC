@@ -1,10 +1,10 @@
-<%= form_for(@author) do |f| %>
-  <% if @author.errors.any? %>
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-      <% @author.errors.full_messages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :surname %><br>
-    <%= f.text_field :surname %>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
