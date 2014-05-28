@@ -1,2 +1,27 @@
 <h1>MyAccount#info</h1>
-<p>Find me in app/views/my_account/info.html.erb</p>
+<%= form_tag 'save', method: 'put'  do %>
+
+    <div class="field">
+      <%=label_tag 'Imię' %><br>
+      <%= text_field_tag @user.name %>
+    </div>
+
+    <div class="field">
+      <%= label_tag 'Nazwisko' %><br>
+      <%= text_field_tag @user.name %>
+    </div>
+
+    <div class="field">
+      <%=label_tag 'Email' %><br>
+      <%= text_field_tag 'email', @user.email, :disabled => true %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'zapisz' %>
+    </div>
+
+
+
+<% end %>
+
+

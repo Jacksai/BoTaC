@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'welcome/index'
+  get 'me/info', to: 'my_account#info'
+  put 'me/save', to: 'my_account#save'
+
+
 
   resources :authors
 
