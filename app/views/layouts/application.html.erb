@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -83,4 +84,31 @@
     </div> <!-- /container -->
 
   </body>
+=======
+<html>
+<head>
+  <title>NTP</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<div id="user_nav">
+  <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>. This cannot be cheese?
+      <%= link_to 'Wyloguj', destroy_user_session_path , :method => :delete %>
+  <% else %>
+      <%= link_to 'Zarejstruj', new_user_registration_path %> or <%= link_to 'Zaloguj', new_user_session_path %>
+  <% end %>
+</div>
+<%= yield %>
+
+</body>
+>>>>>>> 47bf3ffd00a2ecc10402ae907f3d8edee37d5234
 </html>
