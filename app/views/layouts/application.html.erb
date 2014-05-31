@@ -39,13 +39,6 @@
   </head>
   <body>
 
-	<% if notice %>
-		<p class="alert alert-success"><%= notice %></p>
-	<% end %>
-	<% if alert %>
-		<p class="alert alert-danger"><%= alert %></p>
-	<% end %>
-
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -68,6 +61,7 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
+
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
@@ -80,6 +74,14 @@
         </div><!--/span-->
         <div class="span9">
 		<div id="user_nav">
+
+		<% if notice %>
+		<p class="alert alert-success"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+			<p class="alert alert-danger"><%= alert %></p>
+		<% end %>
+
 		  <% if user_signed_in? %>
 			  Signed in as <%= current_user.email %>. This cannot be cheese?
 			  <%= link_to 'Wyloguj', destroy_user_session_path , :method => :delete %>
