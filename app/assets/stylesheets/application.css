@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.row-fluid {
+.to_center {
 	text-align: center; 
 	vertical-align: middle;
 }

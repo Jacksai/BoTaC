@@ -50,9 +50,12 @@
           <a class="brand" href="#">NTP</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+			  <li><%= link_to "Home", "/welcome/index"  %></li>
+              <li><%= link_to "Books", "/books"  %></li>
+              <li><%= link_to "Reviews", "/reviews"  %></li>
+			  <li><%= link_to "Users", "/reviews"  %></li>
+			  <li><%= link_to 'Wyloguj', destroy_user_session_path , :method => :delete %></li>
+              
             </ul>
           </div><!--/.nav-collapse -->
         </div>
