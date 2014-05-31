@@ -2,12 +2,12 @@
 <%= form_tag 'save', method: 'put'  do %>
 
     <div class="field">
-      <%=label_tag 'Imię' %><br>
+      <%=label_tag 'Name' %><br>
       <%= text_field_tag @user.name %>
     </div>
 
     <div class="field">
-      <%= label_tag 'Nazwisko' %><br>
+      <%= label_tag 'Surname' %><br>
       <%= text_field_tag @user.name %>
     </div>
 
@@ -17,7 +17,7 @@
     </div>
 
     <div class="actions">
-      <%= submit_tag 'zapisz' %>
+      <%= submit_tag 'save' %>
     </div>
 
 
