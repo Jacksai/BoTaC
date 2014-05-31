@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :activate]
 
   # GET /books
   # GET /books.json
@@ -59,6 +59,13 @@ class BooksController < ApplicationController
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def activate
+    @book.state= "accepted"
+    @book.save
+   redirect_to books_url, notice: 'Book was accepted'
+
   end
 
   private
