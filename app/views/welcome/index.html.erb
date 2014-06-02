@@ -1,3 +1,17 @@
-<h1>BoTaC</h1>
+<h1>Welcome on BoTaC site!</h1>
+
+<h3> My books </h3>
+
+<% @user = current_user %>
+
+My favourite books: <%= @user.book_comments.count %>
+
+<h3> My revievs </h3>
+
+My books: <%= @user.book_comments.count %>
+
+<h3> My friends </h3>
+
+My friends: <%= @user.friends.count %>
 
 
