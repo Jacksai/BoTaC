@@ -1,17 +1,36 @@
-<h1>Welcome on BoTaC site!</h1>
-
-<h3> My books </h3>
 
 <% @user = current_user %>
 
-My favourite books: <%= @user.book_comments.count %>
 
-<h3> My revievs </h3>
+<div class="page-header">
+  <h1>Welcome on BoTaC site! <br/>
+  <small> You are logged as <%= @user.name %>  <%=  @user.surname %> </small>
+  </h1>
+</div>
 
-My books: <%= @user.book_comments.count %>
+<div class="span3">
+<ul class="nav nav-pills nav-stacked">
+  <li class="active">
+      <span class="badge pull-right"> <%= @user.book_comments.count %> </span>
+      My books reviews
+  </li>
 
-<h3> My friends </h3>
+  <li class="active">
+      <span class="badge pull-right"> <%= @user.friends.count %>  </span>
+      My friends
+  </li>
 
-My friends: <%= @user.friends.count %>
+</ul>
+</div>
+
+<div class="span9"></div>
+
+
+<div style="text-align: center; vertical-align: middle;">
+	<%= image_tag("decoration.jpg", :alt => "decoration") %>
+</div>
+
+
+
 
 
