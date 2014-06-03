@@ -1,3 +1,5 @@
+<% @book.state = 0 %>
+
 <%= form_for @book, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
@@ -14,14 +16,15 @@
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
+      <%= f.text_area :description, :class => 'text_area' %>
     </div>
   </div>
+
     <% if current_user.admin? %>
   <div class="control-group">
     <%= f.label :state, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :state, :class => 'text_field' %>
+      <%= f.text_field :state, :value => @book.state, :class => 'text_field',:disabled => true %>
     </div>
   </div>
     <% end %>

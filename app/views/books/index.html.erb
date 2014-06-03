@@ -11,7 +11,7 @@
       <th><%= model_class.human_attribute_name(:description) %></th>
       <% if current_user.admin? %>
           <th><%= model_class.human_attribute_name(:state) %></th>
-          <th><%= model_class.human_attribute_name(:created_at) %></th>
+		  <th><%= model_class.human_attribute_name(:created_at) %></th>
           <th><%=t '.actions', :default => t("helpers.actions") %></th>
       <% end %>
     </tr>
@@ -25,7 +25,8 @@
         <td><%= book.description %></td>
         <% if current_user.admin? %>
             <td><%= book.state %></td>
-            <td><%=l book.created_at %></td>
+			<td><%= book.created_at %></td>
+		    
             <td>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_book_path(book), :class => 'btn btn-mini' %>
