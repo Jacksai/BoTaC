@@ -2,7 +2,7 @@
   <div class="control-group">
     <%= f.label :user_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :user_id, :class => 'text_field' %>
+      <%= f.text_field :user, :value => current_user.id, :class => 'text_field',:disabled => true %>
     </div>
   </div>
   <div class="control-group">
@@ -20,7 +20,7 @@
   <div class="control-group">
     <%= f.label :grade, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :grade, :class => 'text_field' %>
+      <%=f.select :grade,(1..10) ,:class => 'text_field' %>
     </div>
   </div>
 
