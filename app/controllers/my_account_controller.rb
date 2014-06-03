@@ -9,7 +9,7 @@ before_action :set_user
     @user.name = params[:name]
     @user.surname= params[:surname]
     @user.save
-    redirect_to me_info_path
+    redirect_to me_info_path, :notice => "Changes saved"
   end
 
   private
