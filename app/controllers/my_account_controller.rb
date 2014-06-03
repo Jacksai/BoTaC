@@ -1,11 +1,21 @@
 class MyAccountController < ApplicationController
-  def info
-    @user = current_user
+before_action :set_user
 
+  def info
   end
 
   def save
-    @user.name = params
+    @user = current_user
+    @user.name = params[:name]
+    @user.surname= params[:surname]
+    @user.save
     redirect_to me_info_path
   end
+
+  private
+
+  def set_user
+    @user = current_user
+  end
+
 end

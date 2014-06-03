@@ -1,14 +1,14 @@
-<h1>MyAccount#info</h1>
+<h1>About Me</h1>
 <%= form_tag 'save', method: 'put'  do %>
 
     <div class="field">
       <%=label_tag 'Name' %><br>
-      <%= text_field_tag @user.name %>
+      <%= text_field_tag 'name', @user.name %>
     </div>
 
     <div class="field">
       <%= label_tag 'Surname' %><br>
-      <%= text_field_tag @user.name %>
+      <%= text_field_tag 'surname', @user.surname  %>
     </div>
 
     <div class="field">
@@ -17,7 +17,7 @@
     </div>
 
     <div class="actions">
-      <%= submit_tag 'save' %>
+      <%= submit_tag 'Zapisz', :class=>'btn' %>
     </div>
 
 
