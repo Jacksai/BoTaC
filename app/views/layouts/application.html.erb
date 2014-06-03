@@ -58,7 +58,11 @@
 
 	 		<ul class="nav navbar-nav navbar-right" style="float:right;">
 				<li class="dropdown">
+				<% if current_user.name.length == 0 && current_user.surname.length == 0 %>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> My account <b class="caret"></b></a>
+				<%else %>
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= current_user.name %> <%= current_user.surname %> <b class="caret"></b></a>
+				<% end %>
 				  <ul class="dropdown-menu">
 				    <li><%= link_to "Settings", me_info_path %></li>
 				    <li class="divider"></li>
@@ -84,6 +88,10 @@
               <li><%= link_to "My friends", "/friends"  %></li>
             </ul>
           </div><!--/.well -->
+			<hr/>
+			<p style="text-align:center; font-style:italic; color:#c0c0c0; "> “For one who reads, there is no limit to the number of lives that may be lived, for fiction, biography, and history offer an inexhaustible number of lives in many parts of the world, in all periods of time.”  </p> <br/>
+			<p style="text-align:right;color:#c0c0c0;"> ― Louis L'Amour </p>
+		<hr/>
         <div id="footer">
       <div class="container">
         <p class="muted credit">&copy; BoTaC 2014 </p>
