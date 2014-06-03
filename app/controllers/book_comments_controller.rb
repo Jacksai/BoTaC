@@ -25,6 +25,7 @@ class BookCommentsController < ApplicationController
   # POST /book_comments.json
   def create
     @book_comment = BookComment.new(book_comment_params)
+    @book_comment.user_id = current_user.id
 
     respond_to do |format|
       if @book_comment.save

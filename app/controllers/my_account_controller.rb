@@ -12,6 +12,10 @@ before_action :set_user
     redirect_to me_info_path, :notice => "Changes saved"
   end
 
+  def comments
+    @comments = BookComent.find_by(user: current_user)
+  end
+
   private
 
   def set_user

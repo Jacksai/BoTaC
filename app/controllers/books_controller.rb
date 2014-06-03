@@ -4,7 +4,11 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    if current_user.admin?
+      @books = Book.all
+    else
+      @books = Book.accepted
+    end
   end
 
   # GET /books/1
@@ -65,6 +69,9 @@ class BooksController < ApplicationController
     @book.state= "accepted"
     @book.save
    redirect_to books_url, notice: 'Book was accepted'
+  end
+
+  def comments
 
   end
 
