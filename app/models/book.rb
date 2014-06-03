@@ -4,5 +4,5 @@ class Book < ActiveRecord::Base
   belongs_to :author
   has_and_belongs_to_many :tags
   has_many :book_comments
-  enum state: [:accepted, :pending]
+  enum state: [:pending, :accepted]
 end

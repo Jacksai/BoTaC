@@ -19,7 +19,7 @@
       <tr>
         <td><%= link_to book.id, book_path(book) %></td>
         <td><%= book.title %></td>
-        <td><%= book.author_id %></td>
+        <td><%= book.author.name+" "+book.author.surname %></td>
         <td><%= book.description %></td>
         <td><%= book.state %></td>
         <td><%=l book.created_at %></td>
