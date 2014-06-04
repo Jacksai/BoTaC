@@ -67,7 +67,7 @@
 				  <ul class="dropdown-menu">
 				    <li><%= link_to "Settings", me_info_path %></li>
 				    <li class="divider"></li>
-				    <li><%= link_to 'Wyloguj', destroy_user_session_path , :method => :delete %></li>
+				    <li><%= link_to 'Sign out', destroy_user_session_path , :method => :delete %></li>
 				  </ul>
 				</li>
 		  	</ul>
@@ -85,7 +85,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">User Panel</li>
               <li><%= link_to "My books", "/books"  %></li>
-              <li><%= link_to "My reviews", "/book_comments"  %></li>
+              <li><%= link_to "My reviews", "/my_comments"  %></li>
               <li><%= link_to "My friends", "/friends"  %></li>
             </ul>
           </div><!--/.well -->

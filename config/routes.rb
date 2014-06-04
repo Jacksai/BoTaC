@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   get 'me/info', to: 'my_account#info'
+  get 'my_comments', to: 'book_comments#my_comments'
   put 'me/save', to: 'my_account#save'
 
 

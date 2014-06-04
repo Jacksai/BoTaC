@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <% @book_comments.each do |book_comment| %>
-	  <% if book_comment.user_id == current_user.id %>
+
       <tr>
         <td><%= link_to book_comment.id, book_comment_path(book_comment) %></td>
         <td><%= book_comment.user_id %></td>
@@ -24,6 +24,8 @@
         <td><%= book_comment.content %></td>
         <td><%= book_comment.grade %></td>
         <td>
+        <% if current_user.admin? or book_comment.user_id == current_user.id %>
+
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_book_comment_path(book_comment), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -31,10 +33,11 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+
+            <% end %>
         </td>
       </tr>
     <% end %>
-	<% end %>
 
   </tbody>
 </table>
