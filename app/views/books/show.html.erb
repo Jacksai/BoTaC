@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @book.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:author_id) %>:</strong></dt>
-  <dd><%= @book.author.name %></dd>
+  <dd><%= @book.author.full_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @book.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
