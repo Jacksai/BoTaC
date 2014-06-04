@@ -7,6 +7,10 @@ class BookCommentsController < ApplicationController
     @book_comments = BookComment.all
   end
 
+  def my_comments
+    @book_comments = BookComment.find_by(user_id: current_user.id)
+  end
+
   # GET /book_comments/1
   # GET /book_comments/1.json
   def show
