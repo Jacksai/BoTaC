@@ -19,7 +19,7 @@
     <% @authors.each do |author| %>
       <tr>
         <td><%= link_to author.id, author_path(author) %></td>
-        <td><%= author.name %></td>
+        <td><%= link_to  author.name, author_path(author) %></td>
         <td><%= author.surname %></td>
         <td><%= author.description %></td>
         <% if current_user.admin? %>
