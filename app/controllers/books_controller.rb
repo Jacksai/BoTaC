@@ -71,6 +71,13 @@ class BooksController < ApplicationController
    redirect_to books_url, notice: 'Book was accepted'
   end
 
+  def deactivate
+    @book.state= "pending"
+    @book.save
+    redirect_to books_url, notice: 'Book was deactivated, users wont see this book'
+  end
+
+
   def comments
 
   end

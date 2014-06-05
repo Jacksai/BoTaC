@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'me/info', to: 'my_account#info'
   get 'my_comments', to: 'book_comments#my_comments'
   put 'me/save', to: 'my_account#save'
-
+  post 'books/activate/:id' => 'books#activate'
+  post 'books/deactivate/:id' => 'books#deactivate'
 
 
   resources :authors
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
     root 'welcome#index'
-  post 'books/activate/:id' => 'books#activate'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
