@@ -59,11 +59,7 @@
 
 	 		<ul class="nav navbar-nav navbar-right" style="float:right;">
 				<li class="dropdown">
-				<% if current_user.name.length == 0 && current_user.surname.length == 0 %>
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> My account <b class="caret"></b></a>
-				<%else %>
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= current_user.name %> <%= current_user.surname %> <b class="caret"></b></a>
-				<% end %>
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= current_user.email %> <b class="caret"></b></a>
 				  <ul class="dropdown-menu">
 				    <li><%= link_to "Settings", me_info_path %></li>
 				    <li class="divider"></li>
@@ -113,6 +109,11 @@
 		</div>
           <%= bootstrap_flash %>
           <%= yield %>
+		  
+		<div style="text-align: center; vertical-align: middle;">
+			<%= image_tag("decoration.jpg", :alt => "decoration") %>
+		</div>
+
         </div>
       </div><!--/row-->
 

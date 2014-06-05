@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140527191649) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "state"
+    t.integer  "state",       default: 0
   end
 
   add_index "books", ["author_id"], name: "index_books_on_author_id"
